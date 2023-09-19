@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { TypeAnimation } from "react-type-animation";
 
 const HeroSection = () => {
   return (
@@ -7,7 +9,16 @@ const HeroSection = () => {
       <div className="grid grid-cols-1 sm:grid-cols-12">
         <div className="col-span-7 place-self-center text-center sm:text-left">
           <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4">
-            Hello, I'm Manoj Bastakoti
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+              Hello, I'm {""}
+            </span>
+            <br />
+            <TypeAnimation
+              sequence={["Manoj Bastakoti", 1000, "Web Developer", 1000]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+            />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
             I am writing to express my strong interest in the internship
@@ -21,8 +32,10 @@ const HeroSection = () => {
             <button className="rounded-full px-6 py-3 mr-4 w-full sm:w-fit mb-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white">
               Hire Me
             </button>
-            <button className="rounded-full px-6 py-3 w-full sm:w-fit bg-transparent hover:bg-slate-800 border border-white text-white">
-              Download CV
+            <button className="rounded-full px-1 py-1 w-full sm:w-fit bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white">
+              <span className="bg-[#121212] hover:bg-slate-800 block rounded-full px-5 py-2">
+                Download CV
+              </span>
             </button>
           </div>
         </div>
