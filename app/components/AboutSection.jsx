@@ -11,8 +11,7 @@ const TAB_DATA = [
       <ul className="list-disc pl-2">
         <li>Node.js</li>
         <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
+        <li>MongoDB</li>
         <li>JavaScript</li>
         <li>React</li>
       </ul>
@@ -92,7 +91,7 @@ const AboutSection = () => {
             </TabButton>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-5">
             {TAB_DATA.find((t) => t.id === tab).content}
           </div>
         </div>
