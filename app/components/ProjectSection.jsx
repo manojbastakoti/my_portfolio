@@ -10,7 +10,7 @@ const projectData = [
     description: "Project 1 Description",
     image: "/image/projects/project1-img.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/manojbastakoti/my_portfolio",
     previewUrl: "/",
   },
   {
@@ -19,7 +19,7 @@ const projectData = [
     description: "Project 2 Description",
     image: "/image/projects/project2-img.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/manojbastakoti/Ylite",
     previewUrl: "/",
   },
   {
@@ -28,7 +28,7 @@ const projectData = [
     description: "Project 3 Description",
     image: "/image/projects/project3-img.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/manojbastakoti/Toolkit-Movie-app",
     previewUrl: "/",
   },
 ];
@@ -44,7 +44,7 @@ const ProjectSection = () => {
     project.tag.includes(tag)
   );
   return (
-    <>
+    <section className="text-white" id="projects">
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-4">
         My Projects
       </h2>
@@ -74,7 +74,7 @@ const ProjectSection = () => {
           ))}
         </ul>
       </div>
-    </>
+    </section>
   );
 };
 

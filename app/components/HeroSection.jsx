@@ -20,22 +20,23 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            I am writing to express my strong interest in the internship
-            opportunity at AusNep IT Solutions, as advertised on Facebook Group.
-            As a recent graduate with a Bachelor Of Engineering in Information
-            Technology(IT engineer) and a passion for web development, I am
-            excited to contribute my strong knowledge of React Or Node.js to
-            your team.
+            Hey there! I'm a full stack developer who loves building all aspects
+            of web applications. From creating user-friendly interfaces to
+            handling the behind-the-scenes magic, I've got it covered. I enjoy
+            finding solutions that make websites work smoothly and look great.
+            Let's create some digital magic together!
           </p>
           <div>
             <button className="rounded-full px-6 py-3 mr-4 w-full sm:w-fit mb-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white">
               Hire Me
             </button>
-            <button className="rounded-full px-1 py-1 w-full sm:w-fit bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white">
-              <span className="bg-[#121212] hover:bg-slate-800 block rounded-full px-5 py-2">
-                Download CV
-              </span>
-            </button>
+            <a href="/myCV.pdf" download="cv">
+              <button className="rounded-full px-1 py-1 w-full sm:w-fit bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white">
+                <span className="bg-[#121212] hover:bg-slate-800 block rounded-full px-5 py-2">
+                  Download CV
+                </span>
+              </button>
+            </a>
           </div>
         </div>
         <div className="col-span-5 place-self-center mt-5">

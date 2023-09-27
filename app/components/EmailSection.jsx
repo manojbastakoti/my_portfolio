@@ -1,10 +1,67 @@
-import React from "react";
+"use client";
+import React, { useRef, useState } from "react";
 import GithubIcon from "../../public/github-icon.svg";
 import LinkedinIcon from "../../public/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
+import emailjs from "@emailjs/browser";
+
+// import React, { useState } from "react";
 
 const EmailSection = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_nr8mojr",
+        "template_pfesvrl",
+        form.current,
+        "kATVpzeKj2vAuxbWN"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
+  // const [formData, setFormData] = useState({
+  //   email: "",
+  //   subject: "",
+  //   message: "",
+  // });
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   try {
+  //     const response = await fetch("/api/contact.js", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
+  //     console.log(await response.json())
+
+  //     if (response.ok) {
+  //       console.log("Email sent successfully!");
+  //       // Handle success (e.g., display a success message)
+  //     } else {
+  //       console.error("Email sending failed!");
+  //       // Handle failure (e.g., display an error message)
+  //     }
+  //   } catch (error) {
+  //     console.error("Error sending email:", error);
+  //   }
+  // };
+
   return (
     <section
       id="contact"
@@ -30,8 +87,18 @@ const EmailSection = () => {
         </div>
       </div>
       <div>
-        <form className="flex flex-col">
+        <form className="flex flex-col" ref={form} onSubmit={sendEmail}>
           <div className="mb-6">
+            <label className="text-white block mb-2 text-sm font-medium">
+              Name
+            </label>
+            <input
+              type="text"
+              name="user_name"
+              required
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 mb-3"
+              placeholder="Your Name"
+            />
             <label
               htmlFor="email"
               className="text-white block mb-2 text-sm font-medium"
@@ -41,6 +108,7 @@ const EmailSection = () => {
             <input
               type="email"
               id="email"
+              name="user_email"
               required
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
               placeholder="xyz@gmail.com"
